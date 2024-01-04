@@ -1,2 +1,43 @@
 # Print Midi
 :toc:
+
+
+## Background
+
+## Feature
+
+
+## view transition
+
+image::images/view_transition.svg[]
+
+
+## View
+[options="autowidth"]
+|===
+| name | feature | remarks
+
+| Logo | image | assets/splash.png
+| PbRN | image | auto
+| main | menu | button * 5
+| set/open file | - | system api
+| keyboard | floating button + modal(track select)
+ pkeyboard + note frame
+ frame |
+|score | TODO | 
+|===
+
+### Logo
+
+## ViewParts
+
+[options="autowidth"]
+|===
+|name | feature | remarks
+
+| menu | normal button |
+| floating button | show/select track | 
+| modal | select track | 
+| pkeyboard | black/white | 
+| note frame |  | 
+|===

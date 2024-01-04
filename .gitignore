@@ -64,3 +64,8 @@ yarn-error.log
 
 # testing
 /coverage
+
+
+# user add
+/ios/Podfile.lock
+/package-lock.json

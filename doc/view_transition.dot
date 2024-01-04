@@ -1,0 +1,26 @@
+digraph G {
+    rankdir="TD"
+    node[shape="box",style="rounded"]
+
+    logo[label="Logo"]
+    rn[label="powerd by RN"]
+    main[label="main"]
+    file[label="set file name"]
+    ofile[label="open file"]
+    kbd[label="keyboard"]
+    score[label="score"]
+
+    logo -> rn
+    rn -> main
+    main -> file[label="Output Midi"]
+    main -> file[label="Output Pdf"]
+    file -> main
+    main -> kbd[label="New Music"]
+    main -> ofile[label="Open File"]
+    ofile -> kbd [label="Edit"]
+    kbd -> main
+    kbd -> kbd[label="track change"]
+    main -> score[label="Show Score"]
+    score -> main
+
+}

@@ -21,12 +21,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
   );
 };
 
-export const useAuth = (): AuthContextType => {
+export const useAuth = (): AuthContextType | undefined => {
   const context = useContext(AuthContext);
 
-  if (!context) {
-    throw new Error('useAuthはAuthProviderと一緒に使ってください。');
-  }
+  // if (!context) {
+  //   throw new Error('useAuthはAuthProviderと一緒に使ってください。');
+  // }
 
   return context;
 };

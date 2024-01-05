@@ -2,25 +2,47 @@ digraph G {
     rankdir="TD"
     node[shape="box",style="rounded"]
 
-    logo[label="Logo"]
+    logo[label="Splash Screen"]
     rn[label="powerd by RN"]
     main[label="main"]
     file[label="set file name"]
     ofile[label="open file"]
     kbd[label="keyboard"]
     score[label="score"]
+    dl[label="loading..."]
+    tex[label="has texlive?", shape="diamond", style=""]
+    track[label="track & tone"]
+    auth[label="permission"]
+
+    rec[label="recording"]
 
     logo -> rn
     rn -> main
+    main -> auth[label="if permission not exists"]
+    auth -> main
     main -> file[label="Output Midi"]
-    main -> file[label="Output Pdf"]
+    main -> ofile[label="Output Pdf\nShow score"]
+    main -> tex[label="Output Pdf\nShow score\nOnly if the file was edited at the last moment"]
+    ofile -> tex[label="Output Pdf\nShow score"]
+    tex-> main[label="cancel"]
+    tex -> dl[label="No"]
+    tex -> file[label="Yes"]
+    tex -> score[label="Yes"]
+    main->rec[label="recording"]
+    rec -> file[label="save"]
+    file -> rec
+    rec -> main
+    dl -> file
+    dl -> score
+    dl -> main[label="error/cancel/done"]
     file -> main
     main -> kbd[label="New Music"]
-    main -> ofile[label="Open File"]
-    ofile -> kbd [label="Edit"]
+    main -> ofile[label="Edit"]
+    ofile -> main[label="Cancel"]
+    ofile -> kbd
     kbd -> main
-    kbd -> kbd[label="track change"]
-    main -> score[label="Show Score"]
+    kbd -> track[label="track change"]
+    track -> kbd
     score -> main
 
 }

@@ -3,17 +3,19 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { DetailsScreen } from './screens/DetailsScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { SplashScreen } from './screens/SplashScreen';
 import { PbRN } from './screens/PbRN';
+import { KeyboardScreen } from './screens/KeyboardScreen';
+import { TrackList } from './screens/TrackList';
 
 export type RootStackParams = {
   Auth: undefined;
-  Home: undefined;
-  Details: undefined;
   Splash: undefined;
   PbRN: undefined;
+  Main: undefined;
+  KBD: {} | undefined;
+  Track: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -33,11 +35,12 @@ const NavigationContent: React.FC = () => {
       <Stack.Group screenOptions={{ headerShown: false, animation: "fade" }}        >
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="PbRN" component={PbRN} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Main" component={HomeScreen} />
       </Stack.Group>
-      <Stack.Group screenOptions={{ headerShown: true }}        >
-        <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Group screenOptions={{ headerShown: false }}        >
+        <Stack.Screen name="KBD" component={KeyboardScreen} />
       </Stack.Group>
+      <Stack.Screen name="Track" component={TrackList} />
     </Stack.Navigator>
   );
 };

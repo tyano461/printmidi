@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* printmidiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* printmidiTests.m */; };
+		067121B12B498B0D0005FA75 /* RCTMidiModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 067121B02B498B0D0005FA75 /* RCTMidiModule.m */; };
+		067121B62B49A2CF0005FA75 /* MidiModule.c in Sources */ = {isa = PBXBuildFile; fileRef = 067121B52B49A2CF0005FA75 /* MidiModule.c */; };
+		067121BB2B4B81590005FA75 /* swftMidiModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067121BA2B4B81590005FA75 /* swftMidiModule.swift */; };
+		067121BF2B4BB3770005FA75 /* EmuAPS_8MB.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 067121BE2B4BB3770005FA75 /* EmuAPS_8MB.sf2 */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -30,6 +34,13 @@
 		00E356EE1AD99517003FC87E /* printmidiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = printmidiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* printmidiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = printmidiTests.m; sourceTree = "<group>"; };
+		067121B02B498B0D0005FA75 /* RCTMidiModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTMidiModule.m; path = printmidi/RCTMidiModule.m; sourceTree = "<group>"; };
+		067121B32B4996200005FA75 /* RCTMidiModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RCTMidiModule.h; path = printmidi/RCTMidiModule.h; sourceTree = "<group>"; };
+		067121B42B49A2CF0005FA75 /* MidiModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MidiModule.h; path = printmidi/MidiModule.h; sourceTree = "<group>"; };
+		067121B52B49A2CF0005FA75 /* MidiModule.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = MidiModule.c; path = printmidi/MidiModule.c; sourceTree = "<group>"; };
+		067121B92B4B81590005FA75 /* printmidi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "printmidi-Bridging-Header.h"; sourceTree = "<group>"; };
+		067121BA2B4B81590005FA75 /* swftMidiModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = swftMidiModule.swift; path = printmidi/swftMidiModule.swift; sourceTree = "<group>"; };
+		067121BE2B4BB3770005FA75 /* EmuAPS_8MB.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = EmuAPS_8MB.sf2; path = printmidi/EmuAPS_8MB.sf2; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* printmidi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = printmidi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = printmidi/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = printmidi/AppDelegate.mm; sourceTree = "<group>"; };
@@ -86,12 +97,19 @@
 		13B07FAE1A68108700A75B9A /* printmidi */ = {
 			isa = PBXGroup;
 			children = (
+				067121BE2B4BB3770005FA75 /* EmuAPS_8MB.sf2 */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				067121B02B498B0D0005FA75 /* RCTMidiModule.m */,
+				067121BA2B4B81590005FA75 /* swftMidiModule.swift */,
+				067121B42B49A2CF0005FA75 /* MidiModule.h */,
+				067121B52B49A2CF0005FA75 /* MidiModule.c */,
+				067121B32B4996200005FA75 /* RCTMidiModule.h */,
+				067121B92B4B81590005FA75 /* printmidi-Bridging-Header.h */,
 			);
 			name = printmidi;
 			sourceTree = "<group>";
@@ -206,7 +224,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -243,6 +261,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				067121BF2B4BB3770005FA75 /* EmuAPS_8MB.sf2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +411,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067121BB2B4B81590005FA75 /* swftMidiModule.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				067121B12B498B0D0005FA75 /* RCTMidiModule.m in Sources */,
+				067121B62B49A2CF0005FA75 /* MidiModule.c in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D26B8A9B1CD7E852CA83F71D /* Pods-printmidi-printmidiTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -439,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE99DF2AA5BD241353778DE5 /* Pods-printmidi-printmidiTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = printmidiTests/Info.plist;
@@ -480,6 +504,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = printmidi;
+				SWIFT_OBJC_BRIDGING_HEADER = "printmidi-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -506,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = printmidi;
+				SWIFT_OBJC_BRIDGING_HEADER = "printmidi-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -542,6 +568,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
@@ -622,6 +649,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;

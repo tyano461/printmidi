@@ -11,7 +11,7 @@ export const PbRN: React.FC<
 > = ({ navigation }) => {
 
     setTimeout(() => {
-        resetNavigate(navigation, 'Home');
+        resetNavigate(navigation, 'Main');
     }, 1000);
     return (
         <>

@@ -17,17 +17,87 @@ image::images/view_transition.svg[]
 |===
 | name | feature | remarks
 
-| Logo | image | assets/splash.png
-| PbRN | image | auto
-| main | menu | button * 5
-| set/open file | - | system api
-| keyboard | floating button + modal(track select)
- pkeyboard + note frame
+| Splash Screen | image | assets/splash.png
+| Powered by React Native | image | auto
+| main | main menu | 
+| open file | - | system api
+| set file name| - | system api
+| permission | - | system api
+| keyboard | kbdheader +
+ pkeyboard +
+ note frame
  frame |
+| track & tone | set/select track/tone | 
+| loading... | progress |
 |score | TODO | 
+| recording | TODO |
 |===
 
-### Logo
+### Splash Screen
+Show Logo
+
+### Powered by React Native
+Show RN image
+
+### main
+
+has <<mainmenu,main menu>>
+
+If permission for access rights has not been obtained, +
+show <<permission, permission>>
+
+### open file
+
+system api
+
+- select existing midi file
+
+### set file name
+
+system api
+
+- select output file name
+
+[[permission]]
+### permission
+
+system api
+
+Pop-up to obtain access rights below
+
+- Shared directory access
+- Bluetooth access
+
+### keyboard
+show following parts
+
+- kbdheader
+- pkeyboard
+- note frame
+
+### track & tone
+
+- select current track
+- select tone of track
+- select output synthesizer
+
+maximum track number is [.red]#16#
+
+### loading…
+
+- show progress bar
+- has cancel button
+
+### score
+
+show full score
+
+### recording
+
+- record button
+- stop button
+- select input source
+
 
 ## ViewParts
 
@@ -35,9 +105,21 @@ image::images/view_transition.svg[]
 |===
 |name | feature | remarks
 
-| menu | normal button |
-| floating button | show/select track | 
-| modal | select track | 
+| mainmenu | normal button |
+| kbdheader | play/stop +
+track +
+put/erase +
+resolution | 
 | pkeyboard | black/white | 
 | note frame |  | 
 |===
+
+[[mainmenu]]
+### main menu
+
+- Edit
+- New Music
+- Output PDF
+- Show Score
+- Recording
+- License

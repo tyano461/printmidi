@@ -52,7 +52,7 @@ void cb2(void) {
       opencb(@[@"-1", @"{}", @"failed"]);
     }
   } else {
-      opencb(@[@"0", @"{}", @"cloud"]);
+    opencb(@[@"0", @"{}", @"cloud"]);
   }
 }
 
@@ -86,12 +86,13 @@ RCT_EXPORT_METHOD(moduleinit:(RCTResponseSenderBlock)callback) {
 }
 
 RCT_EXPORT_METHOD(OpenMidi: (RCTResponseSenderBlock)callback) {
+  [self.sampler openfile];
   UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes: @[(NSString*)UTTypeMIDI] asCopy:true];
   UIViewController *rnvc = RCTPresentedViewController();
-
+  
   opencb = callback;
   picker.delegate = self;
-
+  
   [rnvc presentViewController:picker animated:true completion:nil];
   
   callback(@[@"0", @"{}", @"called"]);

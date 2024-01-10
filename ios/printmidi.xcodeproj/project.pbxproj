@@ -15,9 +15,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		66A781E779B9024E37824438 /* libPods-printmidi-printmidiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAD1C9D9882FE198FA1C83C /* libPods-printmidi-printmidiTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		85B4FF8494480458DC19C83D /* libPods-printmidi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0923C63DCB3BBD875421CC8 /* libPods-printmidi.a */; };
-		9B5B16246C407C8993CF91FE /* libPods-printmidi-printmidiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A57BAB6F64DC4CEC3227809F /* libPods-printmidi-printmidiTests.a */; };
+		C383596C6996FBBB12A6673A /* libPods-printmidi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDD3D8428F3202D36EF758B /* libPods-printmidi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,20 +41,20 @@
 		067121B92B4B81590005FA75 /* printmidi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "printmidi-Bridging-Header.h"; sourceTree = "<group>"; };
 		067121BA2B4B81590005FA75 /* swftMidiModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = swftMidiModule.swift; path = printmidi/swftMidiModule.swift; sourceTree = "<group>"; };
 		067121BE2B4BB3770005FA75 /* EmuAPS_8MB.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = EmuAPS_8MB.sf2; path = printmidi/EmuAPS_8MB.sf2; sourceTree = "<group>"; };
+		0CDC97F1A7A90DC47949D692 /* Pods-printmidi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-printmidi.debug.xcconfig"; path = "Target Support Files/Pods-printmidi/Pods-printmidi.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* printmidi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = printmidi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = printmidi/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = printmidi/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = printmidi/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = printmidi/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = printmidi/main.m; sourceTree = "<group>"; };
-		768C99D5DBD53FB4C6FF3652 /* Pods-printmidi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-printmidi.debug.xcconfig"; path = "Target Support Files/Pods-printmidi/Pods-printmidi.debug.xcconfig"; sourceTree = "<group>"; };
+		3E95ECBF10E8EAAD6BB9A0BF /* Pods-printmidi-printmidiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-printmidi-printmidiTests.debug.xcconfig"; path = "Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		524CC253B764477B3EB32D6B /* Pods-printmidi-printmidiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-printmidi-printmidiTests.release.xcconfig"; path = "Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = printmidi/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A57BAB6F64DC4CEC3227809F /* libPods-printmidi-printmidiTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-printmidi-printmidiTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C45BC78BB30248299BF50B9F /* Pods-printmidi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-printmidi.release.xcconfig"; path = "Target Support Files/Pods-printmidi/Pods-printmidi.release.xcconfig"; sourceTree = "<group>"; };
-		D26B8A9B1CD7E852CA83F71D /* Pods-printmidi-printmidiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-printmidi-printmidiTests.debug.xcconfig"; path = "Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AEDD3D8428F3202D36EF758B /* libPods-printmidi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-printmidi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EE99DF2AA5BD241353778DE5 /* Pods-printmidi-printmidiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-printmidi-printmidiTests.release.xcconfig"; path = "Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests.release.xcconfig"; sourceTree = "<group>"; };
-		F0923C63DCB3BBD875421CC8 /* libPods-printmidi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-printmidi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7FF31906B00FED9B0364398 /* Pods-printmidi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-printmidi.release.xcconfig"; path = "Target Support Files/Pods-printmidi/Pods-printmidi.release.xcconfig"; sourceTree = "<group>"; };
+		FBAD1C9D9882FE198FA1C83C /* libPods-printmidi-printmidiTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-printmidi-printmidiTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B5B16246C407C8993CF91FE /* libPods-printmidi-printmidiTests.a in Frameworks */,
+				66A781E779B9024E37824438 /* libPods-printmidi-printmidiTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85B4FF8494480458DC19C83D /* libPods-printmidi.a in Frameworks */,
+				C383596C6996FBBB12A6673A /* libPods-printmidi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,8 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				F0923C63DCB3BBD875421CC8 /* libPods-printmidi.a */,
-				A57BAB6F64DC4CEC3227809F /* libPods-printmidi-printmidiTests.a */,
+				AEDD3D8428F3202D36EF758B /* libPods-printmidi.a */,
+				FBAD1C9D9882FE198FA1C83C /* libPods-printmidi-printmidiTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,10 +158,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				768C99D5DBD53FB4C6FF3652 /* Pods-printmidi.debug.xcconfig */,
-				C45BC78BB30248299BF50B9F /* Pods-printmidi.release.xcconfig */,
-				D26B8A9B1CD7E852CA83F71D /* Pods-printmidi-printmidiTests.debug.xcconfig */,
-				EE99DF2AA5BD241353778DE5 /* Pods-printmidi-printmidiTests.release.xcconfig */,
+				0CDC97F1A7A90DC47949D692 /* Pods-printmidi.debug.xcconfig */,
+				F7FF31906B00FED9B0364398 /* Pods-printmidi.release.xcconfig */,
+				3E95ECBF10E8EAAD6BB9A0BF /* Pods-printmidi-printmidiTests.debug.xcconfig */,
+				524CC253B764477B3EB32D6B /* Pods-printmidi-printmidiTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -173,12 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "printmidiTests" */;
 			buildPhases = (
-				C888D855410EED0D4284541E /* [CP] Check Pods Manifest.lock */,
+				0A32FE2612C6DF44EB096F9E /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				5FDC4C5C06ED8A44C47751D3 /* [CP] Embed Pods Frameworks */,
-				A53D450396E20BAAB9E9DC2E /* [CP] Copy Pods Resources */,
+				69E32BBAFD7FDD87FF68CF33 /* [CP] Embed Pods Frameworks */,
+				D3AB4EA8A8C2196B12111B84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,13 +194,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "printmidi" */;
 			buildPhases = (
-				D7668F77390C833B2B0B7574 /* [CP] Check Pods Manifest.lock */,
+				8537C64C830C0111382D0A76 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				D95EC8C61F0BABA08B1512FE /* [CP] Embed Pods Frameworks */,
-				C75B5ED6C66F3C57BF31A62D /* [CP] Copy Pods Resources */,
+				5D4CC9A33E35E9C58210F037 /* [CP] Embed Pods Frameworks */,
+				672CDEC3CEC6AF59E87B130B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,58 +284,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		5FDC4C5C06ED8A44C47751D3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A53D450396E20BAAB9E9DC2E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C75B5ED6C66F3C57BF31A62D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C888D855410EED0D4284541E /* [CP] Check Pods Manifest.lock */ = {
+		0A32FE2612C6DF44EB096F9E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,7 +306,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D7668F77390C833B2B0B7574 /* [CP] Check Pods Manifest.lock */ = {
+		5D4CC9A33E35E9C58210F037 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		672CDEC3CEC6AF59E87B130B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69E32BBAFD7FDD87FF68CF33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8537C64C830C0111382D0A76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,21 +379,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D95EC8C61F0BABA08B1512FE /* [CP] Embed Pods Frameworks */ = {
+		D3AB4EA8A8C2196B12111B84 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-printmidi/Pods-printmidi-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-printmidi-printmidiTests/Pods-printmidi-printmidiTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -432,7 +432,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D26B8A9B1CD7E852CA83F71D /* Pods-printmidi-printmidiTests.debug.xcconfig */;
+			baseConfigurationReference = 3E95ECBF10E8EAAD6BB9A0BF /* Pods-printmidi-printmidiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,7 +460,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE99DF2AA5BD241353778DE5 /* Pods-printmidi-printmidiTests.release.xcconfig */;
+			baseConfigurationReference = 524CC253B764477B3EB32D6B /* Pods-printmidi-printmidiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,7 +485,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 768C99D5DBD53FB4C6FF3652 /* Pods-printmidi.debug.xcconfig */;
+			baseConfigurationReference = 0CDC97F1A7A90DC47949D692 /* Pods-printmidi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -513,7 +513,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C45BC78BB30248299BF50B9F /* Pods-printmidi.release.xcconfig */;
+			baseConfigurationReference = F7FF31906B00FED9B0364398 /* Pods-printmidi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

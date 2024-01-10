@@ -1,6 +1,12 @@
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native"
 import { isBlackKey } from "../modules/misc"
 
+
+export interface TrackDataProperties {
+    trackno: number
+    measure: number
+}
+
 function frameIn(key: string) {
     console.log("frame in:" + key)
 }
@@ -9,7 +15,7 @@ function frameOut(key: string) {
     console.log("frame out:" + key)
 }
 
-export const NoteFrame: React.FC<{headerOffset?:number}> = ({headerOffset:headerOffset}) => {
+export const NoteFrame: React.FC<{ trackdata?: TrackDataProperties }> = ({ trackdata}) => {
     const frames = []
 
     for (let i = 0; i < 88; i++) {
@@ -39,7 +45,7 @@ const styles = StyleSheet.create({
         height: 18.68,
         borderWidth: 0.5,
         backgroundColor: "#FFFFFF"
-    }, 
+    },
     frames: {
         width: "100%",
         height: 1760,

@@ -1,6 +1,7 @@
 import { TouchableOpacity, View, Text, StyleSheet, TouchableHighlight } from "react-native"
 import { Int32 } from "react-native/Libraries/Types/CodegenTypes"
 import MidiModule from "../modules/NativeModuleHelper"
+import { TrackDataProperties } from "./NoteFrame";
 
 function whitePressIn(wkey: string) {
     console.log("w" + wkey)
@@ -19,11 +20,12 @@ function midiinit(track:number) {
     MidiModule.moduleinit(()=>{});
 }
 
-export const Keyboards: React.FC<{track:number}> = ({track}) => {
+export const Keyboards: React.FC<{track:TrackDataProperties}> = ({track}) => {
     const whitekeys = []
     const blackkeys = []
 
-    midiinit(track);
+    midiinit(track.trackno);
+
     for (let i = 0; i < 52; i++) {
         whitekeys.push(
             <TouchableOpacity key={"w" + i} style={styles.white}

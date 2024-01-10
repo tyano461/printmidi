@@ -5,6 +5,7 @@ import MidiModule from "../modules/NativeModuleHelper";
 import { Animated } from "react-native";
 import { resetNavigate } from "../modules/misc";
 import { PlayMode } from "../modules/Definitions";
+import { TrackDataProperties } from "./NoteFrame";
 
 enum EditMode {
     Write = 0,
@@ -22,7 +23,7 @@ enum UndoRedo {
 
 export const KeyboardHeader: React.FC<{
     handler: CallableFunction
-    , track: number
+    , track?: TrackDataProperties
     , options?: any
 }> = ({ handler, track, options }) => {
     let loading = false
@@ -105,7 +106,7 @@ export const KeyboardHeader: React.FC<{
                     }
                 }}
             />
-            <Button title={"T:" + track} onPress={() => {
+            <Button title={"T:" + track?.trackno} onPress={() => {
                 navigation?.navigate('Track')
             }} />
             <Button title={"♪=" + resolution} onPress={() => {

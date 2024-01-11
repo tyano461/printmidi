@@ -9,14 +9,15 @@
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #import <React/RCTUtils.h>
 #import "RCTMidiModule.h"
+#import "OverlayView.h"
 
 static Boolean _initialized = false;
+static Boolean _other_view_shown = false;
 static RCTResponseSenderBlock cb;
-static RCTResponseSenderBlock opencb;
+static UIView *picker = nil;
+static UIView *overlayView = nil;
 
 extern void miditest(void(* cb)(void));
-
-
 
 void cb2(void) {
   NSString *msg = @"initialized";
@@ -45,19 +46,19 @@ void cb2(void) {
     
     if (result) {
       NSLog(@"Imported");
-      opencb(@[@"0", @"{}", @"success"]);
+      cb(@[@"0", @"{}", @"success"]);
     }
     else {
       NSLog(@"Import failed. %@", err.localizedDescription);
-      opencb(@[@"-1", @"{}", @"failed"]);
+      cb(@[@"-1", @"{}", @"failed"]);
     }
   } else {
-    opencb(@[@"0", @"{}", @"cloud"]);
+    cb(@[@"0", @"{}", @"cloud"]);
   }
 }
 
 - (void)documentPickerWasCancelled:(UIDocumentPickerViewController*) controller {
-  opencb(@[@"-1", @"{}", @"cancelled"]);
+  cb(@[@"-1", @"{}", @"cancelled"]);
 }
 
 RCT_EXPORT_MODULE();
@@ -85,16 +86,155 @@ RCT_EXPORT_METHOD(moduleinit:(RCTResponseSenderBlock)callback) {
   }
 }
 
-RCT_EXPORT_METHOD(OpenMidi: (RCTResponseSenderBlock)callback) {
-  [self.sampler openfile];
-  UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes: @[(NSString*)UTTypeMIDI] asCopy:true];
+- (void)openMidi: (RCTResponseSenderBlock)callback {
+  if (_other_view_shown) {
+    callback(@[@"-1", @""]);
+  }
+  UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes: @[(UTType*)UTTypeMIDI] asCopy:true];
   UIViewController *rnvc = RCTPresentedViewController();
   
-  opencb = callback;
+  cb = callback;
   picker.delegate = self;
   
   [rnvc presentViewController:picker animated:true completion:nil];
+}
+
+RCT_EXPORT_METHOD(OpenMidi: (RCTResponseSenderBlock)callback) {
+  if ([NSThread isMainThread]) {
+    [self openMidi: callback];
+  } else {
+    dispatch_async(
+                   dispatch_get_main_queue(),
+                   ^{
+                     [self openMidi: callback];
+                   });
+    
+  }
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+  return 1;
+}
+- (NSInteger)pickerView:(UIPickerView *)thePickerView
+numberOfRowsInComponent:(NSInteger)component {
+  return  self.drumlist ? [self.drumlist count] : 1;
+}
+- (NSString *)pickerView:(UIPickerView *)thePickerView
+             titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+  return self.drumlist ? [self.drumlist objectAtIndex:row] : @"";
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView
+      didSelectRow:(NSInteger)row
+       inComponent:(NSInteger)component {
+}
+
+- (void)showDrumSelector: (NSInteger)channel list:(NSArray*)list callback:(RCTResponseSenderBlock)callback {
+  UIView *picker;
+  UIViewController *rnvc;
+
+  if (!list || ![list count]) {
+    callback(@[@"-1", @"list none"]);
+    return;
+  }
+
+  if (!picker) {
+    picker = [self createPicker];
+  }
+  self.drumlist = list;
   
-  callback(@[@"0", @"{}", @"called"]);
+  rnvc =RCTPresentedViewController();
+  [rnvc.view addSubview:picker];
+}
+
+RCT_EXPORT_METHOD(ShowDrumSelector: (NSInteger)channel list:(NSArray*)list callback:(RCTResponseSenderBlock)callback) {
+  
+  if ([NSThread isMainThread]) {
+    [self showDrumSelector:channel list:list callback:callback];
+  } else {
+    dispatch_async(
+                   dispatch_get_main_queue(),
+                   ^{
+                     [self showDrumSelector:channel list:list callback:callback];
+                   }
+                   );
+  }
+}
+- (void)showAlert:(NSString*) title message:(NSString*)message button:(NSArray*)button style:(NSString*)style  callback:(RCTResponseSenderBlock)callback {
+  UIAlertController* alert;
+  UIViewController *rnvc;
+  UIAlertAction* defaultAction;
+  NSMutableAttributedString *atmsg;
+  NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+  
+  alert = [UIAlertController alertControllerWithTitle:title
+                                              message:message
+                                       preferredStyle:UIAlertControllerStyleAlert];
+  
+  if (style != nil && [style isEqualToString:@"left"]) {
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+    NSDictionary *attr = @{NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName: [UIFont systemFontOfSize:12]};
+    atmsg = [[NSMutableAttributedString alloc] initWithString:message attributes:attr];
+    
+    [alert setValue:atmsg forKey:@"attributedMessage"];
+  }
+  
+  defaultAction = [UIAlertAction actionWithTitle:[button objectAtIndex:0]
+                                           style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action) {}];
+  
+  [alert addAction:defaultAction];
+  rnvc =RCTPresentedViewController();
+  [rnvc presentViewController:alert animated:YES completion:nil];
+}
+
+RCT_EXPORT_METHOD(ShowAlert: (NSString*)title message:(NSString*)message button:(NSArray*)button style:(NSString*) style  callback:(RCTResponseSenderBlock)callback ){
+  if ([NSThread isMainThread]) {
+    [self showAlert:title message:message button:button style:style callback: callback ];
+  } else {
+    dispatch_async(
+                   dispatch_get_main_queue(),
+                   ^{
+                     [self showAlert:title message:message button:button style:style callback: callback ];
+                   }
+                   );
+    
+  }
+}
+
+- (UIView*) createPicker {
+  UIView *picker;
+  UIPickerView *drum;
+  UIButton *button;
+
+  if (!overlayView) {
+    overlayView = [[OverlayView alloc] init];
+  }
+
+  picker = [[UIView alloc]initWithFrame:CGRectMake(0,300, 300, 330)];
+  drum = [[UIPickerView alloc] initWithFrame:CGRectMake(0,30,300,300)];
+  button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  button.frame = CGRectMake(0, 0, 300, 30);
+  [button setTitle:@"完了" forState:UIControlStateNormal];
+  [button addTarget:self action:@selector(decidePicker:) forControlEvents:UIControlEventTouchUpInside];
+
+  drum.delegate = self;
+  drum.dataSource = self;
+
+  [picker addSubview:overlayView];
+  [picker addSubview:button];
+  [picker addSubview:drum];
+  return picker;
+}
+
+- (void)overlayTouch:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self cancelPicker];
+}
+
+- (void)decidePicker:(UIButton*)button {
+  cb(@[@"0", @"0"]);
+}
+- (void)cancelPicker {
+  cb(@[@"-1", @"1"]);
 }
 @end

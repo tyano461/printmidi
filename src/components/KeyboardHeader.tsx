@@ -2,16 +2,10 @@ import React, { useState } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { ImageButton } from "./ImageButton";
 import MidiModule from "../modules/NativeModuleHelper";
-import { Animated } from "react-native";
 import { resetNavigate } from "../modules/misc";
 import { PlayMode } from "../modules/Definitions";
-import { TrackDataProperties } from "./NoteFrame";
-
-enum EditMode {
-    Write = 0,
-    Erase = 1
-
-}
+import { EditMode, TrackDataProperties } from "./NoteFrame";
+import { KeyboardProperties } from "../modules/Midi";
 
 enum UndoRedo {
     Never = 0,
@@ -28,12 +22,20 @@ export const KeyboardHeader: React.FC<{
 }> = ({ handler, track, options }) => {
     let loading = false
 
+    console.log("track:" + track)
+    let base_props = track ? track : {
+        trackno: 0,
+        measure: 0,
+        max_measure: 1,
+        resolution: 1,
+        channel: 0,
+        editmode: EditMode.Write
+    }
+
     const navigation = options?.navigation
-    const [play, setPlay] = useState(PlayMode.Stop)
-    const [measure, setMeasure] = useState(1)
-    const [resolution, setResolution] = useState(1)
-    const [editmode, setEditMode] = useState(EditMode.Write)
+    const [play, setPlayIcon] = useState(PlayMode.Play)
     const [undoredo, setUndoRedo] = useState(UndoRedo.Never)
+    const [props, setProps] = useState(base_props)
 
     let udstyle = {
         ...styles.icon,
@@ -43,6 +45,11 @@ export const KeyboardHeader: React.FC<{
     let rdstyle = {
         ...styles.icon,
         disable: undoredo == UndoRedo.RedoAble || undoredo == UndoRedo.Both
+    }
+
+    const measurelist: string[] = [];
+    for (let i = 0; i < props.max_measure; i++) {
+        measurelist.push("" + (i + 1))
     }
 
     // return to menu
@@ -81,18 +88,19 @@ export const KeyboardHeader: React.FC<{
             />
             <ImageButton title="write" source="write" style={styles.icon} imstyle={styles.image}
                 onPress={() => {
-                    console.log("w ed:" + editmode);
-                    if (editmode != EditMode.Write) {
-                        setEditMode(EditMode.Write);
-                        handler();
+                    console.log("w ed:" + props.editmode);
+                    if (props.editmode != EditMode.Write) {
+                        setProps({ ...props, editmode: EditMode.Write });
+                        handler({ edit: EditMode.Write });
                     }
                 }}
             />
             <ImageButton title="erase" source="erase" style={styles.icon} imstyle={styles.image}
                 onPress={() => {
-                    console.log("e ed:" + editmode);
-                    if (editmode != EditMode.Erase) {
-                        setEditMode(EditMode.Erase);
+                    console.log("e ed:" + props.editmode);
+                    if (props.editmode != EditMode.Erase) {
+                        setProps({ ...props, editmode: EditMode.Erase });
+                        handler({ edit: EditMode.Erase });
                     }
                 }}
             />
@@ -100,36 +108,37 @@ export const KeyboardHeader: React.FC<{
                 onPress={() => {
                     handler({ play: play })
                     if (play === PlayMode.Stop) {
-                        setPlay(PlayMode.Play)
+                        setPlayIcon(PlayMode.Play)
                     } else {
-                        setPlay(PlayMode.Stop)
+                        setPlayIcon(PlayMode.Stop)
                     }
                 }}
             />
             <Button title={"T:" + track?.trackno} onPress={() => {
                 navigation?.navigate('Track')
             }} />
-            <Button title={"♪=" + resolution} onPress={() => {
-                MidiModule.ShowDrumSelector(resolution, [], (r: number) => {
-                    if (resolution != r) {
-                        setResolution(r)
+            <Button title={"♪=" + props.resolution} onPress={() => {
+                MidiModule.ShowDrumSelector(props.resolution, ["1", "2", "4"], (r: number) => {
+                    if (props.resolution != r) {
+                        setProps({ ...props, resolution: r })
+                        handler({})
                     }
                 })
             }} />
             <Button title="<" onPress={() => {
-                if (measure > 0) setMeasure(measure - 1)
+                if (props.measure > 0) setProps({ ...props, measure: props.measure - 1 })
                 handler()
             }} />
-            <Button title={"" + measure} onPress={() => {
-                MidiModule.ShowDrumSelector(measure, [], (m: number) => {
-                    if (measure != m) {
-                        setMeasure(m)
+            <Button title={"" + props.measure} onPress={() => {
+                MidiModule.ShowDrumSelector(props.measure, measurelist, (m: number) => {
+                    if (props.measure != m) {
+                        setProps({ ...props, measure: m })
                         handler()
                     }
                 })
             }} />
             <Button title=">" onPress={() => {
-                setMeasure(measure + 1)
+                setProps({ ...props, measure: props.measure + 1 })
                 handler()
             }} />
         </View>

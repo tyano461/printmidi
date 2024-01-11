@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, View, useWindowDimensions} from 'react-native';
 
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
@@ -9,6 +9,7 @@ import { MainMenu } from '../components/MainMenu';
 export const HomeScreen: React.FC<
   NativeStackScreenProps<RootStackParams, 'Main'>
 > = ({navigation}) => {
+
   return (
     <View style={styles.container}>
       <View style={styles.main}>

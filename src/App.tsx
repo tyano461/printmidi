@@ -8,6 +8,7 @@ import { SplashScreen } from './screens/SplashScreen';
 import { PbRN } from './screens/PbRN';
 import { KeyboardScreen } from './screens/KeyboardScreen';
 import { TrackList } from './screens/TrackList';
+import { LicenseScreen } from './screens/LicenseScreen';
 
 export type RootStackParams = {
   Auth: undefined;
@@ -16,6 +17,7 @@ export type RootStackParams = {
   Main: undefined;
   KBD: {} | undefined;
   Track: undefined;
+  License: undefined
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -41,6 +43,7 @@ const NavigationContent: React.FC = () => {
         <Stack.Screen name="KBD" component={KeyboardScreen} />
       </Stack.Group>
       <Stack.Screen name="Track" component={TrackList} />
+      <Stack.Screen name="License" component={LicenseScreen} />
     </Stack.Navigator>
   );
 };

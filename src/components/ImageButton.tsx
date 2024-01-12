@@ -18,7 +18,7 @@ const icons = [
     { key: PlayMode.Play, val: require(ASSETS + "play.png") },
     { key: PlayMode.Stop, val: require(ASSETS + "stop.png") },
     // main menu
-    { key: ICON_KEY.WARNING, val: require(ASSETS + "warning.png") },
+    { key: ICON_KEY.WARNING, val: require(ASSETS + "warning2.png") },
 ]
 
 

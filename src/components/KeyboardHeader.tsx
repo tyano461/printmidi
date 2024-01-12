@@ -5,7 +5,6 @@ import MidiModule from "../modules/NativeModuleHelper";
 import { resetNavigate } from "../modules/misc";
 import { PlayMode } from "../modules/Definitions";
 import { EditMode, TrackDataProperties } from "./NoteFrame";
-import { KeyboardProperties } from "../modules/Midi";
 
 enum UndoRedo {
     Never = 0,
